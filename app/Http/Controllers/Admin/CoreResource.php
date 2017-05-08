@@ -7,6 +7,11 @@ use App\Http\Controllers\Controller;
 
 class CoreResource extends Controller
 {
+    public function add()
+    {
+        echo __METHOD__;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,7 @@ class CoreResource extends Controller
      */
     public function index()
     {
-        echo __METHOD_;
+        echo __METHOD__;
     }
 
     /**
@@ -46,7 +51,7 @@ class CoreResource extends Controller
      */
     public function show($id)
     {
-        //
+        echo $id;
     }
 
     /**

@@ -10,17 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',['uses'=>'MainController@show','as'=>'main']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/blog',['uses'=>'Blog\BlogController@show','as'=>'blog']);
+Route::get('/about-me',['uses'=>'Pages\AboutMeController@show','as'=>'about-me']);
 
-Route::get('/about-me', function () {
-    return view('about-me');
-});
-
-Route::get('/blog',['uses'=>'Admin\Core@getArticles','as'=>'articles','middleware']);
-Route::get('/blog/{id}', ['uses'=>'Admin\CoreResource@getArticle','as'=>'article']);
+//list blog articles
+// Route::get('/blog',['uses'=>'Admin\Core@getArticles','as'=>'articles','middleware']);
+// Route::get('/blog/{id}', ['uses'=>'Admin\Core@getArticle','as'=>'article']);
 
 //list pages
+Route::get('pages/add','Admin\CoreResource@add');
 Route::resource('/pages','Admin\CoreResource');
