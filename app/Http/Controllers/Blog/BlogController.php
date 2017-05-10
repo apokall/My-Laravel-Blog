@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Blog;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
+
 class BlogController extends Controller
 {
     public function show() {
@@ -13,7 +14,7 @@ class BlogController extends Controller
 
         $view = view('blog');
 
-        $view->with('title','My blog');
+        $view->with('title','Блог');
 
         return $view;
 }

@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-  @include('layouts.blog.content')
+  About me
 @endsection
 
 @section('footer')

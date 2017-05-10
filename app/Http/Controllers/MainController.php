@@ -13,7 +13,7 @@ class MainController extends Controller
 
       $view = view('main');
 
-      $view->with('title','Hello');
+      $view->with('title','Главная страница сайта');
 
       return $view;
 }
