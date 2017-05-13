@@ -15,6 +15,7 @@ Route::get('/',['uses'=>'MainController@show','as'=>'main']);
 Route::get('/blog',['uses'=>'Blog\BlogController@show','as'=>'blog']);
 Route::get('/about-me',['uses'=>'Pages\AboutMeController@show','as'=>'about-me']);
 Route::match(['get','post'],'/contact',['uses'=>'Pages\ContactController@show','as'=>'contact']);
+Route::match(['get','post'],'/admin',['uses'=>'Admin\AdminController@showLoginAdmin','as'=>'loginAdmin']);
 
 //list blog articles
 // Route::get('/blog',['uses'=>'Admin\Core@getArticles','as'=>'articles','middleware']);
