@@ -22,6 +22,9 @@
       <div class="row">
 
         <div class="col-sm-8 blog-main">
+@foreach ($articles as $article)
+    <p>This is id {{ $article->postTitle }}</p>
+@endforeach
 
           <div class="blog-post">
             <h2 class="blog-post-title">Sample blog post</h2>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Blog;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
+use DB;
 
 class BlogController extends Controller
 {
@@ -12,11 +13,15 @@ class BlogController extends Controller
 
       if (View::exists('blog')) {
 
-        $view = view('blog');
+        $articles = DB::select('select * from `articles`');
 
-        $view->with('title','Блог');
+        dump($articles);
 
-        return $view;
+        return view('blog',
+        [
+          'title' => 'Блог',
+          'articles' => $articles,
+        ]);
 }
 
   abort(404);
