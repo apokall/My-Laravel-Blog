@@ -17,10 +17,10 @@ Route::get('/about-me',['uses'=>'Pages\AboutMeController@show','as'=>'about-me']
 Route::match(['get','post'],'/contact',['uses'=>'Pages\ContactController@show','as'=>'contact']);
 Route::match(['get','post'],'/admin',['uses'=>'Admin\AdminController@showLoginAdmin','as'=>'loginAdmin']);
 
-//list blog articles
-// Route::get('/blog',['uses'=>'Admin\Core@getArticles','as'=>'articles','middleware']);
-// Route::get('/blog/{id}', ['uses'=>'Admin\Core@getArticle','as'=>'article']);
+
+Route::get('/articles',['uses'=>'Admin\Core@getArticles','as'=>'articles','middleware']);
+Route::get('/articles/{id}', ['uses'=>'Admin\Core@getArticle','as'=>'article']);
 
 //list pages
-Route::get('pages/add','Admin\CoreResource@add');
+Route::get('/pages/add','Admin\CoreResource@add');
 Route::resource('/pages','Admin\CoreResource');
