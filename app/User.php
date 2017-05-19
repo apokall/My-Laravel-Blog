@@ -31,4 +31,9 @@ class User extends Authenticatable
       return $this->hasOne('App\Country', 'user_id', 'id');
     }
 
+    public function articles() {
+      return $this->hasMany('App\Article');
+    }
+
+
 }

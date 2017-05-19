@@ -28,12 +28,18 @@ class Core extends Controller
   //list blog articles
   public function getArticles(Request $request) {
       $country = Country::find(2);
-      // $user = User::find(1);
+      $user = User::find(1);
       // $country = $user->country;
-      dump($country->user);
-      //
+      // dump($country->user);
+      dump($user->articles);
       // $article = Article::all();
       // dump($article);
+      $articles = $user->articles;
+      foreach ($articles as $article => $name) {
+        echo $articles.'<br />';
+        echo $name->postTitle.'<br />';
+      }
+
       return;
   }
 
