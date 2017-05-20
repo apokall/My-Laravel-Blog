@@ -71,7 +71,7 @@ class Core extends Controller
       $article = Article::find(3);
 
       $newPost = $article->postTitle = 'title seted ok';
-      // $article->save($newPost);
+      $article->save();
       echo $article->postTitle;
 
       return;
@@ -94,7 +94,12 @@ class Core extends Controller
     $user->articles()->where('id', $article_id)->update(['text' => 'request text']);
   }
 
-  //article
+  public function updateArticleTitle($article_id, $title)
+  {
+    $article = Article::find($article_id);
+    $article->save();
+  }
+
   public function getArticle($id)
   {
     echo $id;
