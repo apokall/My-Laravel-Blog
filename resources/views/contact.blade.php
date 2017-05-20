@@ -14,6 +14,17 @@
   padding: 10px;
 }
 </style>
+
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
  <form class="" action="{{ route('contact') }}" method="post">
        {{ csrf_field() }}
    <div class="form-group">

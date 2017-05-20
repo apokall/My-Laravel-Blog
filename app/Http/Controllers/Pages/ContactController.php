@@ -9,22 +9,36 @@ use Illuminate\Support\Facades\View;
 
 class ContactController extends Controller
 {
-    protected $request;
+    // protected $request;
+    //
+    // public function __construct(Request $request) {
+    //     $this->request = $request;
+    // }
 
-    public function __construct(Request $request) {
-        $this->request = $request;
-    }
-
-    public function show() {
+    public function show(Request $request) {
 
 
       if (View::exists('contact')) {
+
+        if($request->isMethod('post'))
+        {
+          $rules =
+          [
+            'name' => 'required|max:50',
+            'email' => 'required|email'
+          ];
+
+        $this->validate($request, $rules);
+
+        dump($request->all());
+        }
+
 
         $view = view('contact');
 
         $view->with('title','Контакты и связь со мною');
         $view->with('name');
-        print_r($this->request->except('_token'));
+        // print_r($this->request->except('_token'));
 
         return $view;
       }
