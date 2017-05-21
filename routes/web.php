@@ -24,3 +24,7 @@ Route::get('/articles/{id}', ['uses'=>'Admin\Core@getArticle','as'=>'article']);
 //list pages
 Route::get('/pages/add','Admin\CoreResource@add');
 Route::resource('/pages','Admin\CoreResource');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
