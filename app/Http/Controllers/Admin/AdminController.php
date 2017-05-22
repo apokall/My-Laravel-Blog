@@ -9,14 +9,13 @@ use Illuminate\Support\Facades\View;
 
 class AdminController extends Controller
 {
-  public function showLoginAdmin() {
-    if (View::exists('adminLogin')) {
-
-      $view = view('adminLogin');
-      $view->with('title','Войти');
-
-      return $view;
-    }
-    abort(404);
+  public function show()
+  {
+    return view('admin',
+    [
+      'title' => 'about-me',
+    ]);
   }
+
+
 }
