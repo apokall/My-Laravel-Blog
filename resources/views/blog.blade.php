@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('head')
+<title>{{$title}}</title>
   @parent
 @endsection
 
